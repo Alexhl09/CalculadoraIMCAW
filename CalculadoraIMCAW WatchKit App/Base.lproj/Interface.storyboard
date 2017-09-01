@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CalculadoraIMCAW_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="Fpz-gK-23M">
+                            <items>
+                                <label width="72" alignment="left" text="Peso" id="Snk-Yh-EQ2"/>
+                                <label width="57" height="20" alignment="left" id="ond-eX-BaC"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="40" minimum="40" maximum="200" steps="160" id="uQS-E1-5oS">
+                            <connections>
+                                <action selector="nuevoValorPeso:" destination="AgC-eL-Hgc" id="eIG-36-mrA"/>
+                            </connections>
+                        </slider>
+                        <group width="1" height="20" alignment="left" id="h8Q-0k-NhD">
+                            <items>
+                                <label width="72" alignment="left" text="Estatura" id="GNT-GE-CM1"/>
+                                <label width="64" height="26" alignment="left" id="JpP-nc-Fwy"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="50" minimum="50" maximum="230" steps="180" id="7sZ-d1-VfA">
+                            <connections>
+                                <action selector="nuevoValorAltura:" destination="AgC-eL-Hgc" id="OOv-Ze-VDC"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" title="Calcular" id="QUn-pP-rVB">
+                            <connections>
+                                <action selector="calculo" destination="AgC-eL-Hgc" id="VCn-m5-RDx"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="valorAltura" destination="JpP-nc-Fwy" id="nqg-Sr-O7S"/>
+                        <outlet property="valorPeso" destination="ond-eX-BaC" id="1Bo-0T-Aiw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="40.5"/>
+        </scene>
+        <!--IdentificadorValor-->
+        <scene sceneID="iXo-Ru-uHh">
+            <objects>
+                <controller identifier="IdentificadorValor" id="N4Y-am-gvv" customClass="vistaDetalleInterfaceController" customModule="CalculadoraIMCAW_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Índice de Masa Corporal" numberOfLines="0" id="0U7-ID-y8d"/>
+                        <label width="76" height="33" alignment="left" id="ZOI-po-Tvi"/>
+                    </items>
+                    <connections>
+                        <outlet property="etiquetaResultado" destination="ZOI-po-Tvi" id="r3q-M3-mz8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="312" y="46"/>
+        </scene>
+    </scenes>
+</document>
